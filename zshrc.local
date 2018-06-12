@@ -27,7 +27,7 @@ plugins=(
   zsh-brew-services
 )
 
-[ -f $HOME/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh ] && source $HOME/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+[ -f $HOME/.oh-my-zsh/custom/plugins/you-should-use/you-should-use.plugin.zsh ] && source $HOME/.oh-my-zsh/custom/plugins/you-should-use/you-should-use.plugin.zsh
 
 source $ZSH/oh-my-zsh.sh
 
