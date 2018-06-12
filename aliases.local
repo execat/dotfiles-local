@@ -4,6 +4,13 @@ alias update_mac="sudo softwareupdate -iva"
 # Shell shortcuts
 alias x="exit"
 alias l="ls -ah"
+alias rscp="rsync --partial --progress --rsh=ssh"
+alias convim='vim -u /usr/share/vim/vimrc'
+alias agi='ag -i'
+alias vim='nvim'
+alias ccat='ccat --bg=dark'
+alias v='f -t -e vim -b viminfo'
+alias j='fasd_cd -d'
 
 # Python
 alias update_pip_3="pip3 install --upgrade pip setuptools wheel"
@@ -20,3 +27,14 @@ alias dl_webpages="wget -A html,pdf,txt -m -p -E -k -K -np -e robots=off -U mozi
 alias tatt='tmux attach-session -t'
 alias tlist='tmux list-sessions'
 alias tnew='tmux new -s'
+
+# Postgres
+alias laptop_pg_create_user='createuser -d -s -P'
+
+# NPM
+alias npmlist='npm list -g --depth 0'
+
+function hue() {
+  echo $1
+  rubocop $1 | grep $1 | cut -d":" -f5 | sort | uniq -c | sort -nr
+}

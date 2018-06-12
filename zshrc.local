@@ -1,0 +1,44 @@
+# Enclose whatever you want to measure your startup time against in
+# zmodload zsh/zprof
+# zprof
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+eval $(docker-machine env default)
+
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+plugins = (
+  brew
+  common-aliases
+  fasd
+  globalias
+  git
+  git-extras
+  history
+  ssh-agent
+  thefuck
+  vi-mode
+  zsh-you-should-use
+  zsh-brew-services
+)
+
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities id_rsa id_github_rsa id_digitalocean_rsa
+zstyle :omz:plugins:ssh-agent lifetime 4h
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f $HOME/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh ] && source $HOME/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+
+unalias fd
+unalias ff
+
+function whodunit() {
+  git blame $1 | awk -F ' ' '{print $2}' | sort | uniq -c
+}
