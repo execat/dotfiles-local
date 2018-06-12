@@ -1,0 +1,6 @@
+*~
+*.swp
+*.swo
+.bundle
+zeus.json
+.DS_Store

@@ -1,0 +1,108 @@
+set -g default-terminal "screen-256color" 
+
+# THEME
+set -g status-bg black
+set -g status-fg white
+set -g status-left-length 60
+set -g status-right-length 60
+set -g status-left ' #[default]'
+set -g status-right '#[fg=colour200]%H:%M#[default]'
+set -g mouse on
+
+#set-option -g status-left "#(~/Git/tmux-powerline/status-left.sh)"
+#set-option -g status-right "#(~/Git/tmux-powerline/status-right.sh)"
+
+# Start at 1
+set -g base-index 1
+
+setw -g window-status-format '#[fg=colour235]#I #[fg=white]#W#[default]  '
+setw -g window-status-current-format '#[bg=white,fg=black]⮀ #W #[bg=black,fg=white]⮀'
+
+## GNU Screen bindings
+# Set the prefix to ^A.
+unbind C-b
+set -g prefix ^A
+bind a send-prefix
+
+# lockscreen ^X x 
+unbind ^X
+bind ^X lock-server
+unbind x
+bind x lock-server
+
+# screen ^C c 
+unbind ^C
+bind ^C new-window
+bind c new-window
+
+# detach ^D d
+unbind ^D
+bind ^D detach
+
+# displays * 
+unbind *
+bind * list-clients
+
+# next ^@ ^N sp n 
+unbind ^@
+bind ^@ next-window
+unbind ^N
+bind ^N next-window
+unbind " "
+bind " " next-window
+unbind n
+bind n next-window
+
+# title A
+unbind A
+bind A command-prompt "rename-window %%"
+
+# other ^A
+unbind ^A
+bind ^A last-window
+
+# prev ^H ^P p ^? 
+unbind ^H
+bind ^H previous-window
+unbind ^P
+bind ^P previous-window
+unbind p
+bind p previous-window
+unbind BSpace
+bind BSpace previous-window
+
+# windows ^W w 
+unbind ^W
+bind ^W list-windows
+unbind w
+bind w list-windows
+
+# quit \ 
+#unbind \
+# bind \ confirm-before "kill-server"
+
+# kill K k 
+unbind K
+bind K confirm-before "kill-window"
+unbind k
+bind k confirm-before "kill-window"
+
+# redisplay ^L l 
+unbind ^L
+bind ^L refresh-client
+unbind l
+bind l refresh-client
+
+# split -v |
+unbind |
+bind | split-window
+
+# :kB: focus up
+unbind Tab
+bind Tab select-pane -t:.+
+unbind BTab
+bind BTab select-pane -t:.-
+
+# " windowlist -b
+unbind '"'
+bind '"' choose-window

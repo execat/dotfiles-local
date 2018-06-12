@@ -1,0 +1,22 @@
+# Update
+alias update_mac="sudo softwareupdate -iva"
+
+# Shell shortcuts
+alias x="exit"
+alias l="ls -ah"
+
+# Python
+alias update_pip_3="pip3 install --upgrade pip setuptools wheel"
+
+# Ruby
+alias be="bundle exec"
+alias bi="bundle install --path .bundle"
+alias hist="history | grep"
+
+# Downloads
+alias dl_webpages="wget -A html,pdf,txt -m -p -E -k -K -np -e robots=off -U mozilla"
+
+# tmux
+alias tatt='tmux attach-session -t'
+alias tlist='tmux list-sessions'
+alias tnew='tmux new -s'
