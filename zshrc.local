@@ -3,14 +3,16 @@
 # zprof
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-eval $(docker-machine env default)
+if [ -x "$(command -v foo)" ]; then
+  eval $(docker-machine env default)
+fi
 
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-plugins = (
+plugins=(
   brew
   common-aliases
   fasd
@@ -36,8 +38,10 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 [ -f $HOME/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh ] && source $HOME/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 
-unalias fd
-unalias ff
+if [ -x "$(alias fd)" ]; then
+  unalias fd
+  unalias ff
+fi
 
 function whodunit() {
   git blame $1 | awk -F ' ' '{print $2}' | sort | uniq -c
