@@ -13,11 +13,11 @@ fi
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 plugins=(
-  brew
+  $plugins
+
   common-aliases
   fasd
   globalias
-  git
   git-extras
   history
   ssh-agent
@@ -27,6 +27,10 @@ plugins=(
   zsh-brew-services
 )
 
+[ -f $HOME/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh ] && source $HOME/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+
+source $ZSH/oh-my-zsh.sh
+
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa id_github_rsa id_digitalocean_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
@@ -35,8 +39,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-[ -f $HOME/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh ] && source $HOME/.oh-my-zsh/custom/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 
 if [ -x "$(alias fd)" ]; then
   unalias fd
