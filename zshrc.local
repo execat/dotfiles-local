@@ -42,3 +42,5 @@ unalias ff
 function whodunit() {
   git blame $1 | awk -F ' ' '{print $2}' | sort | uniq -c
 }
+
+export PATH="$HOME/.bin:$PATH"
