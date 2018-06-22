@@ -1,3 +1,8 @@
 # dotfiles-local
 
-Run `curl https://gist.githubusercontent.com/execat/43601780c798db10171a906c8ad376be/raw/d19040fef9a48374c1e5a8f60dd8a6bb07551acd/install.sh | bash`
+This repo is an addon to the installation script written here: https://github.com/execat/install. 
+You can run `curl https://raw.githubusercontent.com/execat/install/master/macos | bash`
+
+## If you are running this repo by itself with `.dotfiles` and `.dotfiles-local`
+
+Use `rcup -d .dotfiles -d .dotfiles-local` to install dotfiles again. More doc here: http://thoughtbot.github.io/rcm/rcm.7.html
