@@ -3,7 +3,7 @@ alias update_mac="sudo softwareupdate -iva"
 
 # Shell shortcuts
 alias x="exit"
-alias l="ls -ah"
+alias l="ls -al"
 alias rscp="rsync --partial --progress --rsh=ssh"
 alias convim='vim -u /usr/share/vim/vimrc'
 alias agi='ag -i'
