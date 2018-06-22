@@ -4,12 +4,8 @@
 [branch]
   autosetupmerge = true
 [core]
-  autocrlf = input
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    excludesfile = ~/.gitignore
-    editor = vim
-[color]
-  ui = auto
+  editor = vim
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -26,9 +22,8 @@
   untracked = cyan
 [alias]
   st = status
-  ci = commit -a
+  ca = commit -a
   br = branch
-  co = checkout
   ds = diff --staged
   unstage = reset HEAD
   uncommit = reset --soft HEAD^
@@ -45,14 +40,10 @@
   sync = "remote update origin --prune"
   pl = "merge --ff-only @{u}"
   forget="! /usr/local/bin/git fetch -p && /usr/local/bin/git branch -vv | awk '/: gone]/{print $1}' | xargs /usr/local/bin/git branch -D"
-[push]
-    default = simple
-[fetch]
-    prune = true
 [help]
-    autocorrect = 5
+  autocorrect = 5
 [filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
