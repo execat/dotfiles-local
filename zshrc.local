@@ -2,7 +2,9 @@
 # zmodload zsh/zprof
 # zprof
 
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+# Check if brew exists for Ubuntu systems
+type brew >/dev/null 2>&1 && [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
 if [ -x "$(command -v foo)" ]; then
   eval $(docker-machine env default)
 fi
@@ -21,6 +23,7 @@ plugins=(
   git-extras
   history
   ssh-agent
+  rbenv
   thefuck
   vi-mode
   zsh-autosuggestions
