@@ -23,6 +23,7 @@ plugins=(
   ssh-agent
   thefuck
   vi-mode
+  zsh-autosuggestions
   zsh-you-should-use
   zsh-brew-services
 )
