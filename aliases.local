@@ -7,7 +7,6 @@ alias l="ls -al"
 alias rscp="rsync --partial --progress --rsh=ssh"
 alias convim='vim -u /usr/share/vim/vimrc'
 alias agi='ag -i'
-alias vim='nvim'
 alias ccat='ccat --bg=dark'
 alias v='f -t -e vim -b viminfo'
 alias j='fasd_cd -d'
