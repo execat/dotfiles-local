@@ -1,4 +1,5 @@
 activesupport
 bundler
 pry
+pry-byebug
 

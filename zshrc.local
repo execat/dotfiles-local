@@ -23,7 +23,7 @@ plugins=(
   git-extras
   history
   ssh-agent
-  rbenv
+  # rbenv # This one is too slow
   thefuck
   vi-mode
   zsh-autosuggestions
@@ -36,7 +36,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_rsa id_github_rsa id_digitalocean_rsa
+zstyle :omz:plugins:ssh-agent identities digitalocean_rsa github_rsa gitlab_rsa heroku_rsa id_rsa localhost_rsa notabug_rsa srht_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -53,4 +53,4 @@ function whodunit() {
   git blame $1 | awk -F ' ' '{print $2}' | sort | uniq -c
 }
 
-export PATH="$HOME/.bin:$PATH"
+# eval "$(ssh-agent -s)"
