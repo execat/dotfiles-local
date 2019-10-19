@@ -9,29 +9,24 @@ if [ -x "$(command -v foo)" ]; then
   eval $(docker-machine env default)
 fi
 
-# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 plugins=(
   $plugins
 
+  brew
   common-aliases
   fasd
   globalias
   git-extras
   history
   ssh-agent
-  # rbenv # This one is too slow
   thefuck
   vi-mode
   zsh-autosuggestions
-  zsh-you-should-use
-  zsh-brew-services
+  you-should-use
+  zsh-syntax-highlighting
 )
-
-[ -f $HOME/.oh-my-zsh/custom/plugins/you-should-use/you-should-use.plugin.zsh ] && source $HOME/.oh-my-zsh/custom/plugins/you-should-use/you-should-use.plugin.zsh
 
 source $ZSH/oh-my-zsh.sh
 
