@@ -51,6 +51,6 @@ function whodunit() {
 
 # eval "$(ssh-agent -s)"
 
-export ZSH_HISTORY_PROJ=$HOME/_code/sources/zsh-sync-history
+export ZSH_HISTORY_PROJ=$HOME/_code/configs/zsh-sync-history
 export ZSH_HISTORY_FILE_ENC=$ZSH_HISTORY_PROJ/$ZSH_HISTORY_FILE_ENC_NAME
 export GIT_COMMIT_MSG="Pushing latest history from $HOST on $(date)"
