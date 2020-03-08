@@ -21,11 +21,12 @@ plugins=(
   globalias
   git-extras
   history
+  history-sync
   ssh-agent
   thefuck
   vi-mode
-  zsh-autosuggestions
   you-should-use
+  zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
@@ -50,3 +51,7 @@ function whodunit() {
 }
 
 # eval "$(ssh-agent -s)"
+
+export ZSH_HISTORY_PROJ=$HOME/_code/configs/zsh-sync-history
+export ZSH_HISTORY_FILE_ENC=$ZSH_HISTORY_PROJ/$ZSH_HISTORY_FILE_ENC_NAME
+export GIT_COMMIT_MSG="Pushing latest history from $HOST on $(date)"
