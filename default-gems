@@ -2,4 +2,5 @@ activesupport
 bundler
 pry
 pry-byebug
-
+referral
+rubycritic
