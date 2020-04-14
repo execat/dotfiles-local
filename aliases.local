@@ -16,7 +16,7 @@ alias update_pip_3="pip3 install --upgrade pip setuptools wheel"
 
 # Ruby
 alias be="bundle exec"
-alias bi="bundle install --path .bundle"
+alias bi="bundle install"
 alias hist="history | grep"
 
 # Downloads
