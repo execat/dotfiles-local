@@ -100,17 +100,17 @@ alt + shift + ctrl - l : yabai -m window --swap east
 # balance size of windows
 # shift + alt - 0 : yabai -m space --balance
 
-shift + cmd - r : yabai -m space --balance
+shift + alt - r : yabai -m space --balance
 
 # make floating window fill screen
 # shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
 
-shift + cmd - up     : yabai -m window --grid 1:1:0:0:1:1
+shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
 
 # make floating window fill left-half of screen
 # shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 
-shift + cmd - left   : yabai -m window --grid 1:2:0:0:1:1
+shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 # shift + cmd - n : yabai -m space --create && \
@@ -119,7 +119,7 @@ shift + cmd - left   : yabai -m window --grid 1:2:0:0:1:1
 #                   yabai -m space --focus "${index}"
 
 
-shift + cmd - n : yabai -m space --create && \
+shift + alt - n : yabai -m space --create && \
         index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
         yabai -m window --space "${index}" && \
         yabai -m space --focus "${index}"
@@ -164,7 +164,7 @@ ctrl + alt - z  : yabai -m display --focus prev
 # toggle window split type
 # alt - e : yabai -m window --toggle split
 
-cmd + shift - space : yabai -m window --toggle split
+shift + alt - space : yabai -m window --toggle split
 
 # float / unfloat window and center on screen
 # alt - t : yabai -m window --toggle float;\
