@@ -1,8 +1,19 @@
+require: rubocop-performance
+
 Layout/LineLength:
   Max: 120
 
 Layout/ParameterAlignment:
   Enabled: false
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
 
 Metrics/AbcSize:
   Enabled: false
@@ -22,8 +33,23 @@ Style/ClassAndModuleChildren:
 Style/Documentation:
   Enabled: false
 
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/ExponentialNotation:
+  Enabled: true
+
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
 
 Style/MutableConstant:
   Enabled: false
@@ -40,7 +66,6 @@ Style/TrailingCommaInHashLiteral:
 AllCops:
   TargetRubyVersion: 2.6+
   Exclude:
-    - '**/*.gemspec'
-    - '**/Rakefile'
-    - 'lib/sequel/adapters/mariadb.rb'
-    - 'Guardfile'
+    - 'apps/web/application.rb'
+    - 'spec/spec_helper.rb'
+
