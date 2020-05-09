@@ -110,14 +110,11 @@ shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
 # make floating window fill left-half of screen
 # shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 
-shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
-
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 # shift + cmd - n : yabai -m space --create && \
 #                   index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
 #                   yabai -m window --space "${index}" && \
 #                   yabai -m space --focus "${index}"
-
 
 shift + alt - n : yabai -m space --create && \
         index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
@@ -136,7 +133,10 @@ shift + alt - n : yabai -m space --create && \
 # ctrl + alt - z  : yabai -m display --focus prev
 # ctrl + alt - 3  : yabai -m display --focus 3
 
-ctrl + alt - z  : yabai -m display --focus prev
+shift + alt - z  : yabai -m display --focus prev
+shift + alt - q  : yabai -m display --focus 1
+shift + alt - w  : yabai -m display --focus 2
+shift + alt - e  : yabai -m display --focus 3
 
 # send window to monitor and follow focus
 # ctrl + cmd - c  : yabai -m window --display next; yabai -m display --focus next
