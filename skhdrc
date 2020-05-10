@@ -134,9 +134,8 @@ shift + alt - n : yabai -m space --create && \
 # ctrl + alt - 3  : yabai -m display --focus 3
 
 shift + alt - z  : yabai -m display --focus prev
-shift + alt - q  : yabai -m display --focus 1
-shift + alt - w  : yabai -m display --focus 2
-shift + alt - e  : yabai -m display --focus 3
+shift + alt - w  : yabai -m display --focus 1
+shift + alt - e  : yabai -m display --focus 2
 
 # send window to monitor and follow focus
 # ctrl + cmd - c  : yabai -m window --display next; yabai -m display --focus next
