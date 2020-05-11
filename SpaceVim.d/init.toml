@@ -56,6 +56,9 @@ name = 'lang#elixir'
 name = 'lang#toml'
 
 [[layers]]
+name = 'lang#elm'
+
+[[layers]]
 name = 'lang#rust'
 
 [[layers]]
@@ -93,6 +96,9 @@ enable = true
 name = 'lang#markdown'
 enableWcwidth = 1
 listItemIndent = 1
+
+[[layers]]
+name = 'fzf'
 
 [[custom_plugins]]
 name = "sotte/presenting.vim"

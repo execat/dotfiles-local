@@ -27,7 +27,8 @@ plugins=(
   vi-mode
   you-should-use
   zsh-autosuggestions
-  zsh-syntax-highlighting
+  you-should-use
+  zsh-brew-services
 )
 
 source $ZSH/oh-my-zsh.sh

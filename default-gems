@@ -3,4 +3,6 @@ bundler
 pry
 pry-byebug
 referral
+rubocop
+rubocop-performance
 rubycritic
