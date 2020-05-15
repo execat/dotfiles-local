@@ -28,7 +28,6 @@ plugins=(
   you-should-use
   zsh-autosuggestions
   you-should-use
-  zsh-brew-services
 )
 
 source $ZSH/oh-my-zsh.sh
