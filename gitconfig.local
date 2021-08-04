@@ -1,3 +1,5 @@
+[init]
+  defaultBranch = dev
 [user]
   name = Anuj More
   email = anujmorex@gmail.com
